@@ -20,3 +20,7 @@ For build files for production run,
 npm run build
 ```
 
+To Run Eslint
+```
+npm run eslint
+```
