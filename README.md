@@ -8,19 +8,19 @@ To Install, run
 npm install
 ```
 
-For development run ,
+For development, run
 ```
 npm run dev
 ```
 
 Open http://localhost:8080/ or http://localhost:8080/webpack-dev-server/
 
-For build files for production run,
+To build files for production, run
 ```
 npm run build
 ```
 
-To Run Eslint
+To Lint with eslint, run
 ```
 npm run eslint
 ```
