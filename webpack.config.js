@@ -1,28 +1,37 @@
-var path = require('path');
-var config = {
-  entry: [
-      'webpack/hot/dev-server',
-      'webpack-dev-server/client?http://localhost:8080',
-      path.resolve(__dirname, 'app/main.jsx')
-  ],
+const path = require('path');
+const config = {
+  devServer: {
+    contentBase: path.join(__dirname, 'build'),
+    compress: true,
+    port: 8080,
+    hot: true,
+    lazy: false,
+  },
+  entry: path.resolve(__dirname, 'app/main.jsx'),
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
-      loader: 'babel', // The module to load. "babel" is short for "babel-loader"
-      exclude: /node_modules/
-    },
-    // SASS
-    {
+      loader: 'babel-loader', // The module to load. "babel" is short for "babel-loader"
+      exclude: /node_modules/,
+      options: {
+        presets: ['es2015', 'react', 'stage-0'],
+      },
+    }, {
       test: /\.scss$/,
-      loader: 'style!css!sass',
-      exclude: /node_modules/
-    }
-    ]
-  }
+      use: [{
+        loader: 'style-loader',
+      }, {
+        loader: 'css-loader',
+      }, {
+        loader: 'sass-loader',
+      }],
+      exclude: /node_modules/,
+    }],
+  },
 };
 
 module.exports = config;
