@@ -5,7 +5,7 @@ Includes webpack loader required for SCSS. You can directly import scss files in
 
 To Install, run
 ```
-npm install
+yarn install
 ```
 
 For development, run
