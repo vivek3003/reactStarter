@@ -10,17 +10,17 @@ yarn install
 
 For development, run
 ```
-npm run dev
+yarn run dev
 ```
 
 Open http://localhost:8080/ or http://localhost:8080/webpack-dev-server/
 
 To build files for production, run
 ```
-npm run build
+yarn run build
 ```
 
 To Lint with eslint, run
 ```
-npm run eslint
+yarn run eslint
 ```
